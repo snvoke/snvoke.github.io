@@ -1,0 +1,349 @@
+@import "minireset";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.container {
+  position: relative;
+  width: 750px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.site-header {
+  position: relative;
+  height: 756px;
+  background: #00a0ff;
+  background: linear-gradient(to bottom left, #00a0ff 0%, #00a0ff 50%, #0090e5 50%, #0090e5 100%);
+}
+
+.chat-bg {
+  padding: 0;
+  background: linear-gradient(to bottom left, #00a0ff 0%, #00a0ff 50%, #0090e5 50%, #0090e5 100%);
+}
+
+.chat-header {
+  background-color: #000;
+  margin-bottom: 50px;
+}
+
+.chat-header__title {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+
+.chat {
+  min-height: 996px;
+  // text-align: center;
+}
+
+.chat__inner {
+  display: block;
+  margin-bottom: 50px;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.chat__item {
+  display: inline-block;
+  font-family: 'Karla', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 40px 45px;
+  background-color: #fff;
+  box-shadow: 0 0 50px -5px rgba(#000, 0.3);
+}
+
+.chat__inner:nth-child(odd) .chat__item{
+  float: left;
+  margin-left: 130px;
+}
+
+.chat__inner:nth-child(even) .chat__item {
+  float: right;
+  margin-right: 130px;
+}
+
+.chat__username {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ad807d;
+}
+
+.chat__form {
+  position: relative;
+  padding: 30px 60px;
+  background-color: #000;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 20px;
+  padding-right: 120px;
+  font-family: 'Karla', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 46px;
+  color: #fff;
+  background-color: #000;
+  border: 0;
+}
+
+.input-field::-webkit-input-placeholder {color:#fff;}
+.input-field::-moz-placeholder          {color:#fff;}/* Firefox 19+ */
+.input-field:-moz-placeholder           {color:#fff;}/* Firefox 18- */
+.input-field:-ms-input-placeholder      {color:#fff;}
+
+.btn-chat {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+  background-color: #ffbdb8;
+  border: 0;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: darken(#ffbdb8, 10%);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #88b8ff;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -16px;
+    width: 40px;
+    height: 32px;
+    background: url(../img/Icon-send.svg) no-repeat;
+    background-size: contain;
+  }
+}
+
+.site-header__title {
+  position: relative;
+  padding-top: 130px;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 1;
+  color: #fff;
+  z-index: 10;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -75px;
+    width: 250px;
+    height: 200px;
+    box-shadow: 0px 250px 140px -40px rgba(0,0,0,0.2);
+  }
+}
+
+.site-header__logo {
+  position: absolute;
+  top: 280px;
+  left: 50%;
+  margin-left: -50px;
+  z-index: 1;
+}
+
+.site-footer {
+  height: 580px;
+  background-color: #000;
+}
+
+
+// Style form
+
+.login form {
+  position: absolute;
+  bottom: 30%;
+  left: 6.5%;
+	width: 650px;
+	background: #fff;
+  margin: 0 auto;
+  padding: 0;
+  padding: 90px 80px 40px;
+	border: none;
+  box-shadow: 0 0 50px -5px rgba(#000, 0.3);
+}
+
+.group {
+	position: relative;
+	margin-bottom: 45px;
+}
+
+.login input {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+	font-size: 28px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fff;
+	color: #000;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 2px solid #ebebeb;
+}
+
+.login input:focus { outline: none; }
+
+
+/* Label */
+
+.login label {
+	color: #000;
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+	font-size: 28px;
+  text-transform: uppercase;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	-webkit-transition:all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+.login input:focus ~ label, .login input.used ~ label {
+	top: -20px;
+  // -webkit-transform: scale(.75);
+  //         transform: scale(.75); left: -2px;
+	font-size: 20px;
+  color: #ad807d;
+}
+
+
+/* Underline */
+
+.login .bar {
+	position: relative;
+	display: block;
+	width: 100%;
+
+  &:before,
+  &:after {
+    content: '';
+  	height: 2px;
+  	width: 0;
+  	bottom: 1px;
+  	position: absolute;
+  	background: #00a0ff;
+  	-webkit-transition:all 0.2s ease;
+  	transition: all 0.2s ease;
+  }
+
+  &:before { left: 50%; }
+  &:after { right: 50%; }
+}
+/* active */
+
+.login input:focus ~ .bar:before, .login input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.login .highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+.login input:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	        animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.input-error {
+  animation: shake 0.6s;
+}
+
+@keyframes inputHighlighter {
+	from { background: #00a0ff; }
+	to 	{ width: 0; background: transparent; }
+}
+
+
+/* Button */
+
+.login .button {
+  position: relative;
+  display: inline-block;
+  padding: 20px 24px;
+  width: 100%;
+  vertical-align: middle;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  font-size: 26px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition:all 0.15s ease;
+  transition: all 0.15s ease;
+}
+.login .button:focus { outline: 0; }
+
+
+/* Button modifiers */
+
+.login .buttonBlue {
+  background: #00a0ff;
+}
+
+.login .buttonBlue:hover { background: lighten(#00a0ff, 10%) }
